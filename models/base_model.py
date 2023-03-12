@@ -2,6 +2,7 @@
 '''This qill be the base class'''
 import uuid
 from datetime import datetime as date
+from models.__init__ import storage
 
 
 class BaseModel:
@@ -27,6 +28,7 @@ class BaseModel:
     def save(self):
         '''updates the updated_at attr'''
         self.updated_at = date.now()
+        storage.save()
 
     def to_dict(self):
         '''creates a dictionary containing all attributes'''

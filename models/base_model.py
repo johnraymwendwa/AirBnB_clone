@@ -9,7 +9,7 @@ class BaseModel:
     def __init__(self, *args, **kwargs):
         '''creates instance attributes'''
         if kwargs:
-            for (key, val) in kwargs:
+            for key, val in kwargs.items():
                 if key != "__class__":
                     if key == 'created_at' or key == 'updated_at':
                         val = date.strptime(val, "%Y-%m-%dT%H:%M:%S.%f")

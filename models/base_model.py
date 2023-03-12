@@ -9,7 +9,7 @@ class BaseModel:
     def __init__(self, name=''):
         '''creates instance attributes'''
         self.name = str(name)
-        self.id = str(uuid.uuid4)
+        self.id = str(uuid.uuid4())
         self.created_at = date.now()
         self.updated_at = date.now()
 

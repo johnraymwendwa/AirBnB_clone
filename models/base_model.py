@@ -7,12 +7,14 @@ from datetime import datetime as date
 class BaseModel():
     '''Contains the building objects'''
     def __init__(self, name=''):
+        '''creates instance attributes'''
         self.name = str(name)
         self.id = str(uuid.uuid4)
         self.created_at = date.now()
         self.updated_at = date.now()
 
     def __str__(self):
+        '''returns a string of info'''
         return ("[{}] ({}) {}".format(
                 type(self).__name__, self.id, self.__dict__))
 
@@ -25,9 +27,9 @@ class BaseModel():
         mydict = {}
         mydict["__class__"] = type(self).__name__
         for (key, val) in self.__dict__.items():
-            if key is "created_at":
+            if key == "created_at":
                 mydict[key] = date.isoformat(val)
-            elif key is "updated_at":
+            elif key == "updated_at":
                 mydict[key] = date.isoformat(val)
             else:
                 mydict[key] = val

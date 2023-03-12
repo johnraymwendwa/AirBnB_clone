@@ -4,7 +4,7 @@ import uuid
 from datetime import datetime as date
 
 
-class BaseModel():
+class BaseModel:
     '''Contains the building objects'''
     def __init__(self, name=''):
         '''creates instance attributes'''

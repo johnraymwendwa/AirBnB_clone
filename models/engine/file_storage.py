@@ -40,7 +40,7 @@ class FileStorage:
         try:
             with open(self.__file_path, 'r') as f:
                 mydict = json.load(f)
-                self.new(mydict)
+                #self.new(mydict)
                 #for obj_dict in mydict.values():
                     #cls = obj_dict['__class__']
                     #self.new(eval('{}({})'.format(cls, '**obj_dict')))

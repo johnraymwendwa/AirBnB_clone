@@ -2,7 +2,7 @@
 '''This qill be the base class'''
 import uuid
 from datetime import datetime as date
-from models import storage
+import models
 
 
 class BaseModel:
@@ -19,7 +19,7 @@ class BaseModel:
             self.id = str(uuid.uuid4())
             self.created_at = date.now()
             self.updated_at = date.now()
-            storage.new(self)
+            models.storage.new(self)
 
     def __str__(self):
         '''returns a string of info'''
@@ -29,7 +29,7 @@ class BaseModel:
     def save(self):
         '''updates the updated_at attr'''
         self.updated_at = date.now()
-        storage.save()
+        models.storage.save()
 
     def to_dict(self):
         '''creates a dictionary containing all attributes'''

@@ -80,7 +80,7 @@ class HBNBCommand(cmd.Cmd):
             print("** instance id missing **")
         else:
             objs = models.storage.all()
-            key = '{}.{}'.format(line[0],line[1])
+            key = '{}.{}'.format(line[0], line[1])
             try:
                 obj = objs[key]
                 objs.pop(key)
@@ -113,7 +113,7 @@ class HBNBCommand(cmd.Cmd):
         else:
             objs = models.storage.all()
             print(objs)
-            key = '{}.{}'.format(line[0],line[1])
+            key = '{}.{}'.format(line[0], line[1])
             try:
                 obj = objs[key]
                 print(obj)
@@ -130,10 +130,10 @@ class HBNBCommand(cmd.Cmd):
         return True
 
 
-
 def parse(line):
     """Parses a given string, and returns a list"""
     return shlex.split(line)
+
 
 if __name__ == "__main__":
     HBNBCommand().cmdloop()

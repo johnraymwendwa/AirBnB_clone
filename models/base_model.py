@@ -43,5 +43,3 @@ class BaseModel:
             else:
                 mydict[key] = val
         return mydict
-
-

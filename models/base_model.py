@@ -2,7 +2,7 @@
 '''This qill be the base class'''
 import uuid
 from datetime import datetime as date
-from models.__init__ import storage
+from models import storage
 
 
 class BaseModel:
@@ -19,6 +19,7 @@ class BaseModel:
             self.id = str(uuid.uuid4())
             self.created_at = date.now()
             self.updated_at = date.now()
+            storage.new(self)
 
     def __str__(self):
         '''returns a string of info'''
@@ -30,7 +31,7 @@ class BaseModel:
         self.updated_at = date.now()
         storage.save()
 
-    def to_dict(self):
+    #def to_dict(self):
         '''creates a dictionary containing all attributes'''
         mydict = {}
         mydict["__class__"] = type(self).__name__
@@ -42,3 +43,11 @@ class BaseModel:
             else:
                 mydict[key] = val
         return mydict
+
+    def to_dict(self):
+        base_dict = dict(self.__dict__)
+        base_dict['__class__'] = type(self).__name__
+        base_dict['created_at'] = base_dict['created_at'].isoformat()
+        base_dict['updated_at'] = base_dict['updated_at'].isoformat()
+        return base_dict
+

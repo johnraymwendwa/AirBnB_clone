@@ -1,1 +1,3 @@
-This is my custom implementation of the popular Web Service; AirBnb.
+# JBNB
+
+Custom implementation of the popular Web Service, AirBnb.

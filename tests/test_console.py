@@ -3,8 +3,8 @@
 import sys
 import unittest
 from unittest.mock import create_autospec
-from console import HBNBCommand
-
+#from ..console import HBNBCommand
+import console
 
 class TestConsole(unittest.TestCase):
     """class TestConsole"""

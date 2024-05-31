@@ -62,5 +62,3 @@ python3 -m web_static
 This project is licensed under the MIT License. See the LICENSE file for details.
 
 ---
-
-Feel free to customize the content further to fit the specific details and requirements of your project.
